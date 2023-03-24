@@ -28,21 +28,21 @@ public class RunArm extends CommandBase {
     //Move arm up and down
     double xboxRightY = RobotContainer.xbox.getRightY();
     // PID From John Start
-    double leftMotorPos = RobotContainer.m_arm.GetLeftArmPosition();
-    double setpoint = leftMotorPos;
+    // double leftMotorPos = RobotContainer.m_arm.GetLeftArmPosition();
+    // double setpoint = leftMotorPos;
 
-    if(xboxRightY > -0.1 && xboxRightY < 0.1)
-    {
-      RobotContainer.m_arm.MoveArm(xboxRightY * 0.5);
-      setpoint = leftMotorPos;
-    }
-    else
-    {
-      RobotContainer.m_arm.SetArmToPoint(setpoint);
-    }
+    // if(xboxRightY > -0.1 && xboxRightY < 0.1)
+    // {
+    //   RobotContainer.m_arm.MoveArm(xboxRightY * 0.5);
+    //   setpoint = leftMotorPos;
+    // }
+    // else
+    // {
+    //   RobotContainer.m_arm.SetArmToPoint(setpoint);
+    // }
      // PID From John End 
      // Uncomment below if PID does not work.
-    //RobotContainer.m_arm.MoveArm(xboxRightY * .5);
+    RobotContainer.m_arm.MoveArm(xboxRightY * .4);
 
     if (RobotContainer.xbox.getRightBumper()){
       RobotContainer.m_arm.ExtendArm(.25);

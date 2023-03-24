@@ -70,10 +70,10 @@ public class Arm extends SubsystemBase {
 
 
   public double GetLeftArmPosition(){
-    return leftFalcon.getSelectedSensorPosition() / 2048;
+    return -leftFalcon.getSelectedSensorPosition() / 2048;
   }
   public double GetRightArmPosition(){
-    return rightFalcon.getSelectedSensorPosition() / 2048;
+    return -rightFalcon.getSelectedSensorPosition() / 2048;
   }
   public void ResetArmEncoders(){
     leftFalcon.setSelectedSensorPosition(0);

@@ -7,9 +7,8 @@
 package frc.robot;
 
 //Import all (*) constants, subsystems and commands
-import frc.robot.Constants.*;
 import frc.robot.commands.*;
-import frc.robot.commands.autos.BalanceOnChargeStation.BalanceFullAuto;
+import frc.robot.commands.autos.MidCubeAndDriveOut;
 import frc.robot.subsystems.*;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
@@ -29,8 +28,8 @@ public class RobotContainer {
 
 
   public static final Joystick leftstick = new Joystick(0);
-  public static final Joystick rightstick = new Joystick (1);
-  public static final XboxController xbox = new XboxController(2);
+  public static final Joystick rightstick = new Joystick (2);
+  public static final XboxController xbox = new XboxController(1);
 
   //Smartdashboard choosers/data
   SendableChooser<Command> m_autoChooser = new SendableChooser<>();
@@ -65,8 +64,7 @@ public class RobotContainer {
   private void configureSmartdashboard(){
     //Smartdashboard AutoChooser options
     m_autoChooser.setDefaultOption("No Auto Selected", null);
-    m_autoChooser.addOption("Balance Auto", new BalanceFullAuto());
-    m_autoChooser.addOption("test auto", null);
+    m_autoChooser.addOption("test auto", new MidCubeAndDriveOut());
     SmartDashboard.putData("Auto Mode", m_autoChooser); // Add chooser for auto
 
   }
