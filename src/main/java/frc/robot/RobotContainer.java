@@ -29,8 +29,8 @@ public class RobotContainer {
 
 
   public static final Joystick leftstick = new Joystick(0);
-  public static final Joystick rightstick = new Joystick (2);
-  public static final XboxController xbox = new XboxController(1);
+  public static final Joystick rightstick = new Joystick (1);
+  public static final XboxController xbox = new XboxController(2);
 
   //Smartdashboard choosers/data
   SendableChooser<Command> m_autoChooser = new SendableChooser<>();
