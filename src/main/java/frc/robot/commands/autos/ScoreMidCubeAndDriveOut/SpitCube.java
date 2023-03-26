@@ -7,11 +7,11 @@ package frc.robot.commands.autos.ScoreMidCubeAndDriveOut;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.RobotContainer;
 
-public class HoldArmMidCube extends CommandBase {
-  /** Creates a new HoldArmMidCube. */
-  public HoldArmMidCube() {
+public class SpitCube extends CommandBase {
+  /** Creates a new SpitCube. */
+  public SpitCube() {
     // Use addRequirements() here to declare subsystem dependencies.
-    addRequirements(RobotContainer.m_arm);
+    addRequirements(RobotContainer.m_claw);
   }
 
   // Called when the command is initially scheduled.
@@ -21,21 +21,19 @@ public class HoldArmMidCube extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    double ArmEncoderPos = RobotContainer.m_arm.GetLeftArmPosition();
-    if (ArmEncoderPos <= 10.25){
-      RobotContainer.m_arm.MoveArm(-.17);
-    }
+    // RobotContainer.m_claw.RunIntake(.42069);
+    RobotContainer.m_claw.RunIntake(.8);
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    RobotContainer.m_arm.MoveArm(0);
+    RobotContainer.m_claw.RunIntake(0);
   }
 
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return RobotContainer.m_arm.GetLeftArmPosition() > 10.25;
+    return RobotContainer.m_arm.GetLeftArmPosition() < 6.5;
   }
 }

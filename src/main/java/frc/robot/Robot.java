@@ -15,7 +15,7 @@ public class Robot extends TimedRobot {
   private RobotContainer m_robotContainer;
   
   //FMS Match Timer
-  Timer matchTimer;
+  public static Timer matchTimer;
 
 
   @Override

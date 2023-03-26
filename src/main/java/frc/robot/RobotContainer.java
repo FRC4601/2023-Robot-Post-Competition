@@ -8,7 +8,10 @@ package frc.robot;
 
 //Import all (*) constants, subsystems and commands
 import frc.robot.commands.*;
+import frc.robot.commands.autos.JustDriveOutOfCommunity;
+import frc.robot.commands.autos.MidCube;
 import frc.robot.commands.autos.MidCubeAndDriveOut;
+import frc.robot.commands.autos.ScoreMidCubeAndDriveOut.DriveOutOfCommunity;
 import frc.robot.subsystems.*;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
@@ -64,7 +67,10 @@ public class RobotContainer {
   private void configureSmartdashboard(){
     //Smartdashboard AutoChooser options
     m_autoChooser.setDefaultOption("No Auto Selected", null);
-    m_autoChooser.addOption("test auto", new MidCubeAndDriveOut());
+    m_autoChooser.addOption("Mid Cube & Drive Out", new MidCubeAndDriveOut());
+    m_autoChooser.addOption("Mid Cube", new MidCube());
+    m_autoChooser.addOption("Drive Out Of Community", new JustDriveOutOfCommunity());
+
     SmartDashboard.putData("Auto Mode", m_autoChooser); // Add chooser for auto
 
   }

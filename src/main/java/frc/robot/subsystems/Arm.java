@@ -79,6 +79,9 @@ public class Arm extends SubsystemBase {
     leftFalcon.setSelectedSensorPosition(0);
     rightFalcon.setSelectedSensorPosition(0);
   }
+  public double GetLeftFalconTemp(){
+    return leftFalcon.getTemperature();
+  }
 
   public boolean GetLimitSwitchPressed(){
     return (armLimitSwitch.get());

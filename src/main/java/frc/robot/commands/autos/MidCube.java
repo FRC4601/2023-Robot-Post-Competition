@@ -5,22 +5,20 @@
 package frc.robot.commands.autos;
 
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
-import frc.robot.commands.autos.ScoreMidCubeAndDriveOut.DriveOutOfCommunity;
 import frc.robot.commands.autos.ScoreMidCubeAndDriveOut.HoldArmMidCube;
 import frc.robot.commands.autos.ScoreMidCubeAndDriveOut.SpitCube;
 
 // NOTE:  Consider using this command inline, rather than writing a subclass.  For more
 // information, see:
 // https://docs.wpilib.org/en/stable/docs/software/commandbased/convenience-features.html
-public class MidCubeAndDriveOut extends SequentialCommandGroup {
-  /** Creates a new MidCubeAndDriveOut. */
-  public MidCubeAndDriveOut() {
+public class MidCube extends SequentialCommandGroup {
+  /** Creates a new MidCube. */
+  public MidCube() {
     // Add your commands in the addCommands() call, e.g.
     // addCommands(new FooCommand(), new BarCommand());
     addCommands(
       new HoldArmMidCube(),
-      new SpitCube(),
-      new DriveOutOfCommunity()
+      new SpitCube()
     );
   }
 }

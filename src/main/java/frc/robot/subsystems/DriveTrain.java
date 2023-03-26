@@ -65,7 +65,7 @@ public class DriveTrain extends SubsystemBase {
   }
 
 
-  public void ArcadeDrive(double lspeed, double rspeed){   //Our main ArcadeDrive command. 
+  public void TankDrive(double lspeed, double rspeed){   //Our main ArcadeDrive command. 
     m_drive.tankDrive(lspeed, rspeed, false);
   } 
   public void ArcadeDrive(double speed, double rotation, boolean isSquaredInputs){   //Secondary ArcadeDrive command. Has additional bool for squared inputs to increase controlability at low speeds. 

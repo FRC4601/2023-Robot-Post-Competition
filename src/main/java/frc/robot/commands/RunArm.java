@@ -19,7 +19,6 @@ public class RunArm extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    //THIS IS HOW GITKRAKEN WORKS WOW ISN'T IT SO COOL?
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -27,13 +26,12 @@ public class RunArm extends CommandBase {
   public void execute() {
     //Move arm up and down
     double xboxRightY = RobotContainer.xbox.getRightY();
-
-    RobotContainer.m_arm.MoveArm(xboxRightY * .4);
+    RobotContainer.m_arm.MoveArm(xboxRightY * .325);
 
     if (RobotContainer.xbox.getRightBumper()){
-      RobotContainer.m_arm.ExtendArm(.25);
+      RobotContainer.m_arm.ExtendArm(.4);
     } else if (RobotContainer.xbox.getLeftBumper()){
-      RobotContainer.m_arm.ExtendArm(-.25);
+      RobotContainer.m_arm.ExtendArm(-.4);
     } else{
       RobotContainer.m_arm.ExtendArm(0);
     }

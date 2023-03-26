@@ -28,7 +28,7 @@ public class ArcadeDrive extends CommandBase {
     double LeftStickY = RobotContainer.leftstick.getY();
     double RightStickY = RobotContainer.rightstick.getY();
 
-    RobotContainer.m_drivetrain.ArcadeDrive(LeftStickY * .8, RightStickY * .8);
+    RobotContainer.m_drivetrain.TankDrive(LeftStickY * .8, RightStickY * .8);
     
     
   }
