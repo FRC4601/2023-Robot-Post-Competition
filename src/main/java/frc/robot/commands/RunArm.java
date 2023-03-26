@@ -19,6 +19,7 @@ public class RunArm extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
+    //THIS IS HOW GITKRAKEN WORKS WOW ISN'T IT SO COOL?
   }
 
   // Called every time the scheduler runs while the command is scheduled.
