@@ -64,6 +64,9 @@ public class Arm extends SubsystemBase {
   public void SetArmToPoint(double setpoint){
     leftFalcon.set(ControlMode.PercentOutput, m_armPID.calculate(GetLeftArmPosition(), setpoint));
   }
+  public void StopArm(){
+    MoveArm(0);
+  }
   public void ExtendArm(double speed){
     leftWinch.set(speed);
   }

@@ -39,11 +39,14 @@ public class RunArm extends CommandBase {
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {}
+  public void end(boolean interrupted) {
+    RobotContainer.m_arm.StopArm();
+  }
 
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return false;
+    return RobotContainer.xbox.getYButton();
+    // return false; //if the human player position button goes bye bye, uncomment this and comment out the line above it 
   }
 }

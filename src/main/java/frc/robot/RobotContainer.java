@@ -8,6 +8,7 @@ package frc.robot;
 
 //Import all (*) constants, subsystems and commands
 import frc.robot.commands.*;
+import frc.robot.commands.armpresets.HumanPlayerArm;
 import frc.robot.commands.autos.JustDriveOutOfCommunity;
 import frc.robot.commands.autos.MidCube;
 import frc.robot.commands.autos.MidCubeAndDriveOut;
@@ -53,13 +54,17 @@ public class RobotContainer {
   /** Use this method to define your trigger->command mappings. Triggers can be created via the {@link Trigger#Trigger(java.util.function.BooleanSupplier)} constructor with an arbitrary predicate, or via the named factories in {@link edu.wpi.first.wpilibj2.command.button.CommandGenericHID}'s subclasses for {@lin CommandXboxController Xbox}/{@link edu.wpi.first.wpilibj2.command.button.CommandPS4Controller PS4} controllers or {@link edu.wpi.first.wpilibj2.command.button.CommandJoystick Flightjoysticks}. */
   private void configureBindings() {
     //Pilot Controls
-  
+    // new Trigger(() -> rightstick.getRawButton(0)).onTrue(new InstantCommand(() -> m_arm.ResetArmEncoders())); //find out what button this is I couldn't be bothrereed lol
+
     //Xbox controls
     new Trigger(() -> xbox.getAButton()).onTrue(new InstantCommand(() -> m_arm.ResetArmEncoders()));
     new Trigger(() -> xbox.getBButton()).onTrue(new InstantCommand(() -> m_drivetrain.ResetGyro()));
 
     new Trigger(() -> xbox.getStartButton()).onTrue(new InstantCommand(() -> m_claw.CloseClaw()));
     new Trigger(() -> xbox.getBackButton()).onTrue(new InstantCommand(() -> m_claw.OpenClaw()));
+
+    new Trigger(() -> xbox.getYButton()).onTrue(new InstantCommand(() -> m_arm.setDefaultCommand(new HumanPlayerArm())));
+    new Trigger(() -> xbox.getPOV() == 180).onTrue(new InstantCommand(() -> m_arm.ResetArmEncoders()));
 
 
   }
