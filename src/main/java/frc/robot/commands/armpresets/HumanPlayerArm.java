@@ -24,12 +24,20 @@ public class HumanPlayerArm extends CommandBase {
   @Override
   public void execute() {
     double ArmPos = RobotContainer.m_arm.GetLeftArmPosition();
-    if (ArmPos <= 6){
-      RobotContainer.m_arm.MoveArm(-.25);
-    } else if (ArmPos >= 6 && ArmPos <= 8){
+    if (ArmPos <= 7.5){
       RobotContainer.m_arm.MoveArm(-.2);
-    } else if (ArmPos > 8){
-      RobotContainer.m_arm.MoveArm(-.15);
+    } else if (ArmPos >= 7.5 && ArmPos <= 10.6){
+      RobotContainer.m_arm.MoveArm(-.16);
+    } else if (ArmPos > 10.6){
+      RobotContainer.m_arm.MoveArm(-.12);
+    }
+    
+    if (RobotContainer.xbox.getRightBumper()){
+      RobotContainer.m_arm.ExtendArm(.4);
+    } else if (RobotContainer.xbox.getLeftBumper()){
+      RobotContainer.m_arm.ExtendArm(-.4);
+    } else{
+      RobotContainer.m_arm.ExtendArm(0);
     }
   }
 
