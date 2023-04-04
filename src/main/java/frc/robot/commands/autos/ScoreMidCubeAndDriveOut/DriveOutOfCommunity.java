@@ -24,7 +24,7 @@ public class DriveOutOfCommunity extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    RobotContainer.m_drivetrain.TankDrive(.2723, .25);
+    RobotContainer.m_drivetrain.TankDrive(.2723, .2623);
   }
 
   // Called once the command ends or is interrupted.
