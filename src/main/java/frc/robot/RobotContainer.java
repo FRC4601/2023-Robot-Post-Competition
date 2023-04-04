@@ -1,4 +1,4 @@
-//CB-10 "INSERT ROBOT NAME HERE"
+//CB-10 "Scooper"
 
 // Copyright (c) FIRST and other WPILib contributors.
 // Open Source Software; you can modify and/or share it under the terms of
